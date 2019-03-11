@@ -7,11 +7,11 @@ source "$(dirname "${BASH_SOURCE}")/lib/init.sh"
 host_platform="$(os::build::host_platform)"
 
 # by default, build for these platforms
-platforms=(
-  linux/amd64
-  darwin/amd64
-  windows/amd64
-)
+platforms=( )
+#  linux/amd64
+#  darwin/amd64
+ # windows/amd64
+#)
 image_platforms=( )
 test_platforms=( "${host_platform}" )
 

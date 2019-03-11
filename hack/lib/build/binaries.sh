@@ -207,6 +207,8 @@ os::build::internal::build_binaries() {
 
     local host_platform=$(os::build::host_platform)
     local platform
+    echo "platforms: ${platforms[@]+"${platforms[@]}"}"
+    platforms="linux/ppc64le"
     for platform in "${platforms[@]+"${platforms[@]}"}"; do
       echo "++ Building go targets for ${platform}:" "${targets[@]}"
       mkdir -p "${OS_OUTPUT_BINPATH}/${platform}"

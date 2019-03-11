@@ -232,7 +232,7 @@ for image in image_config:
         dockerfile.write("FROM {}:{}\n".format(full_name(image), image_config[image]["tag"]))
 
 
-    binary_dir_args = ["_output", "local", "bin", "linux", "amd64"]
+    binary_dir_args = ["_output", "local", "bin", "linux", "ppc64le"]
     config = image_config[image]
     for binary in config.get("binaries", []):
         if "vendor_dir" in config:

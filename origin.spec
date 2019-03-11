@@ -270,17 +270,17 @@ install -p -m 755 _output/local/bin/${PLATFORM}/ginkgo %{buildroot}%{_libexecdir
 
 %if 0%{?make_redistributable}
 # Install client executable for windows and mac
-install -d %{buildroot}%{_datadir}/%{name}/{linux,macosx,windows}
-install -p -m 755 _output/local/bin/linux/amd64/oc %{buildroot}%{_datadir}/%{name}/linux/oc
-install -p -m 755 _output/local/bin/linux/amd64/kubectl %{buildroot}%{_datadir}/%{name}/linux/kubectl
-install -p -m 755 _output/local/bin/darwin/amd64/oc %{buildroot}/%{_datadir}/%{name}/macosx/oc
-install -p -m 755 _output/local/bin/darwin/amd64/kubectl %{buildroot}/%{_datadir}/%{name}/macosx/kubectl
-install -p -m 755 _output/local/bin/windows/amd64/oc.exe %{buildroot}/%{_datadir}/%{name}/windows/oc.exe
-install -p -m 755 _output/local/bin/windows/amd64/kubectl.exe %{buildroot}/%{_datadir}/%{name}/windows/kubectl.exe
+#install -d %{buildroot}%{_datadir}/%{name}/{linux,macosx,windows}
+#install -p -m 755 _output/local/bin/linux/amd64/oc %{buildroot}%{_datadir}/%{name}/linux/oc
+#install -p -m 755 _output/local/bin/linux/amd64/kubectl %{buildroot}%{_datadir}/%{name}/linux/kubectl
+#install -p -m 755 _output/local/bin/darwin/amd64/oc %{buildroot}/%{_datadir}/%{name}/macosx/oc
+#install -p -m 755 _output/local/bin/darwin/amd64/kubectl %{buildroot}/%{_datadir}/%{name}/macosx/kubectl
+#install -p -m 755 _output/local/bin/windows/amd64/oc.exe %{buildroot}/%{_datadir}/%{name}/windows/oc.exe
+#install -p -m 755 _output/local/bin/windows/amd64/kubectl.exe %{buildroot}/%{_datadir}/%{name}/windows/kubectl.exe
 # Install oadm client executable
-install -p -m 755 _output/local/bin/linux/amd64/oadm %{buildroot}%{_datadir}/%{name}/linux/oadm
-install -p -m 755 _output/local/bin/darwin/amd64/oadm %{buildroot}/%{_datadir}/%{name}/macosx/oadm
-install -p -m 755 _output/local/bin/windows/amd64/oadm.exe %{buildroot}/%{_datadir}/%{name}/windows/oadm.exe
+#install -p -m 755 _output/local/bin/linux/amd64/oadm %{buildroot}%{_datadir}/%{name}/linux/oadm
+#install -p -m 755 _output/local/bin/darwin/amd64/oadm %{buildroot}/%{_datadir}/%{name}/macosx/oadm
+#install -p -m 755 _output/local/bin/windows/amd64/oadm.exe %{buildroot}/%{_datadir}/%{name}/windows/oadm.exe
 %endif
 
 # Install pod
@@ -425,21 +425,21 @@ touch --reference=%{SOURCE0} $RPM_BUILD_ROOT/usr/sbin/%{name}-docker-excluder
 %{_sysconfdir}/bash_completion.d/oc
 %{_mandir}/man1/oc*
 
-%if 0%{?make_redistributable}
-%files clients-redistributable
-%dir %{_datadir}/%{name}/linux/
-%dir %{_datadir}/%{name}/macosx/
-%dir %{_datadir}/%{name}/windows/
-%{_datadir}/%{name}/linux/oc
-%{_datadir}/%{name}/linux/kubectl
-%{_datadir}/%{name}/macosx/oc
-%{_datadir}/%{name}/macosx/kubectl
-%{_datadir}/%{name}/windows/oc.exe
-%{_datadir}/%{name}/windows/kubectl.exe
-%{_datadir}/%{name}/linux/oadm
-%{_datadir}/%{name}/macosx/oadm
-%{_datadir}/%{name}/windows/oadm.exe
-%endif
+#%if 0%{?make_redistributable}
+#%files clients-redistributable
+#%dir %{_datadir}/%{name}/linux/
+#%dir %{_datadir}/%{name}/macosx/
+#%dir %{_datadir}/%{name}/windows/
+#%{_datadir}/%{name}/linux/oc
+#%{_datadir}/%{name}/linux/kubectl
+#%{_datadir}/%{name}/macosx/oc
+#%{_datadir}/%{name}/macosx/kubectl
+#%{_datadir}/%{name}/windows/oc.exe
+#%{_datadir}/%{name}/windows/kubectl.exe
+#%{_datadir}/%{name}/linux/oadm
+#%{_datadir}/%{name}/macosx/oadm
+#%{_datadir}/%{name}/windows/oadm.exe
+#%endif
 
 %files pod
 %{_bindir}/pod
